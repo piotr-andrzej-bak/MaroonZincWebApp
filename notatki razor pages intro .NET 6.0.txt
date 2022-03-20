@@ -1,0 +1,6 @@
+razor page into .NET 6.0
+
+Edit Project File
+Properties/launchSettings.json
+	"applicationUrl": "https://localhost:443;http://localhost:80",
+appsettings.json -> connection strings
