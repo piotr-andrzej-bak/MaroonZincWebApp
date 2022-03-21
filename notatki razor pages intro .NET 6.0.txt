@@ -4,3 +4,29 @@ Edit Project File
 Properties/launchSettings.json
 	"applicationUrl": "https://localhost:443;http://localhost:80",
 appsettings.json -> connection strings
+
+w .NET 6.0 startup jest zlaczony z program.cs
+
+_ViewImports.cshtml - globalne dołączanie 'using'
+_ViewStart.cshtml - deklaracja master page globalnie
+	w danej stronie mozna zmienic na inny plik layoutu
+w razor: return Pange();
+w MVC: return View();
+IActionResult typ danych uzywany do obslugi akcji
+
+INSTALACJA NuGet Entity tools, entity core, entity core sql
+
+CONNECTION STRING w appsettings.json
+UTWORZYC Data/ApplicationDbContex.cs z klasa z nazwą tabeli i rodzajem obiektu
+DODAC usługę DbContex w Program.cs
+DODAĆ builder.Services.AddDbContex razem z connection string w Program.cs
+DODAĆ Konstruktor w ApplicationDbContex
+MIGRACJA add-migration AddCategoryToDb
+	update-database
+NOWA Empty Razor Page Categories/Index.cshtml
+UTWORZENIE zmiennej _db typu ApplicationDbContex w Category/Index.cshtml
+KONSTRUCTOR IndexModel przyjmujący dane db typu ApplicationDbContex i przekazujący do _db
+UTWORZENIE ZMIENNEJ public IEnumerable<Category> Categories
+W OnGet przyporzatkowanie zmiennej z kategoriami Categories = _db.Category;
+DODANIE w menu w _Layout asp-page="Categories/Index">Category
+DODANIE danych w html w tabeli i pętli foreach
