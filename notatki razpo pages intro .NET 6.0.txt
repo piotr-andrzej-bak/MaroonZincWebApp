@@ -1,2 +1,0 @@
-razor page into .NET 6.0
-
